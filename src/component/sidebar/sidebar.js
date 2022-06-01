@@ -1,5 +1,5 @@
 import React from "react";
-import {Nav} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import './sidebar.css'
 
 const Side = props => {
@@ -8,26 +8,19 @@ const Side = props => {
     return (
         <>
 
-            <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
-                 activeKey="/home"
-                 onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-            >
-                <div className="sidebar-sticky"></div>
-                <Nav.Item>
-                    <Nav.Link href="/home">Active</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-1">Link</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-2">Link</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="disabled" disabled>
-                        Disabled
-                    </Nav.Link>
-                </Nav.Item>
-            </Nav>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand href="#home">FestivApp</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/events">Festivals</Nav.Link>
+                            <Nav.Link href="/artists">Artistes</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
 
         </>
     );
