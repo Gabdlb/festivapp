@@ -5,17 +5,22 @@ import Home from './pages/home/home';
 import Artist from './pages/artists/artists';
 import Event from './pages/events/events';
 import {Button, Card, Col, Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
-import {Route, Router, Routes} from "react-router";
+//import {Route, Router, Routes} from "react-router";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Sidebar from "./component/sidebar/sidebar";
+import {Routes} from "react-router";
 
 function App() {
     return (
         <Router>
-            <Navbar />
+            <Sidebar/>
+
             <Routes>
-                <Route exact path='/' exact element={<Home />} />
-                <Route path='/event' element={<Event />} />
-                <Route path='/artist' element={<Artist />} />
+                <Route exact path='/' element={<Home />}/>
+                <Route path='/event' element={<Event />}/>
+                <Route path='/artist' element={<Artist />}/>
             </Routes>
+
         </Router>
     );
 }
