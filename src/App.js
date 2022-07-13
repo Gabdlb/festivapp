@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './component/sidebar/sidebar.css'
+import Home from './pages/home/home';
+import Artist from './pages/artists/artists';
+import Event from './pages/events/events';
+import {Button, Card, Col, Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
+//import {Route, Router, Routes} from "react-router";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Sidebar from "./component/sidebar/sidebar";
+import {Routes} from "react-router";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          sus
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Sidebar/>
+
+            <Routes>
+                <Route exact path='/' element={<Home />}/>
+                <Route path='/event' element={<Event />}/>
+                <Route path='/artist' element={<Artist />}/>
+            </Routes>
+
+        </Router>
+    );
 }
 
 export default App;
