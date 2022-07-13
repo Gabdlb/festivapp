@@ -23,6 +23,9 @@ const Side = props => {
                             <LinkContainer to="/artist">
                                 <Nav.Link>Artistes</Nav.Link>
                             </LinkContainer>
+                            <LinkContainer to="/login">
+                                <Nav.Link>Login</Nav.Link>
+                            </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
